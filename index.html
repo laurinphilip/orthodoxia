@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#6f1827" />
+    <meta name="description" content="Orthodoxia – Gebete, Glaubenswissen, Heilige und orthodoxer Kalender auf Deutsch und Englisch." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Orthodoxia" />
+    <meta property="og:description" content="Glaube, Gebet und Kirchenjahr – auf Deutsch und Englisch." />
+    <meta property="og:image" content="./og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Orthodoxia" />
+    <meta name="twitter:description" content="Glaube, Gebet und Kirchenjahr – auf Deutsch und Englisch." />
+    <meta name="twitter:image" content="./og.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Orthodoxia" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Orthodoxia</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/library.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Hauptnavigation">
+        <a class="brand" href="#home" aria-label="Orthodoxia – Startseite">
+          <img src="./icons/icon.svg" alt="" width="46" height="46" />
+          <span><strong>Orthodoxia</strong><small data-i18n="brandSubtitle">Glaube im Alltag</small></span>
+        </a>
+        <nav class="side-nav" id="side-nav"></nav>
+        <div class="sidebar-verse">
+          <span class="ornament" aria-hidden="true">☦</span>
+          <p data-i18n="sidebarQuote">„Betet ohne Unterlass.“</p>
+          <small>1 Thess 5,17</small>
+        </div>
+      </aside>
+
+      <div class="page-column">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="mobile-menu" type="button" aria-label="Menü öffnen" aria-controls="mobile-drawer" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="topbar-title">
+            <p id="today-line"></p>
+            <h1 id="page-title">Orthodoxia</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="language-button" id="language-toggle" type="button" aria-label="Sprache wechseln">EN</button>
+            <button class="icon-button" id="search-button" type="button" aria-label="Suche öffnen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+            </button>
+            <button class="icon-button" id="settings-button" type="button" aria-label="Einstellungen öffnen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21h-4v-.07A1.7 1.7 0 0 0 8.95 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.58 15 1.7 1.7 0 0 0 3.03 14H3v-4h.07A1.7 1.7 0 0 0 4.6 8.95a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.58 1.7 1.7 0 0 0 10 3.03V3h4v.07A1.7 1.7 0 0 0 15.05 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.42 9 1.7 1.7 0 0 0 20.97 10H21v4h-.07A1.7 1.7 0 0 0 19.4 15Z"></path></svg>
+            </button>
+          </div>
+        </header>
+
+        <main id="main-content" tabindex="-1"></main>
+
+        <nav class="bottom-nav" id="bottom-nav" aria-label="Mobile Navigation"></nav>
+      </div>
+    </div>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menü" aria-hidden="true">
+      <div class="drawer-head">
+        <a class="brand" href="#home"><img src="./icons/icon.svg" alt="" width="42" height="42" /><strong>Orthodoxia</strong></a>
+        <button class="icon-button" id="drawer-close" type="button" aria-label="Menü schließen">×</button>
+      </div>
+      <nav id="drawer-nav"></nav>
+      <p class="drawer-note" data-i18n="localOnly">Favoriten und Notizen bleiben ausschließlich auf diesem Gerät.</p>
+    </aside>
+
+    <dialog class="content-dialog" id="content-dialog">
+      <form method="dialog"><button class="dialog-close" aria-label="Schließen">×</button></form>
+      <article id="dialog-content"></article>
+    </dialog>
+
+    <dialog class="search-dialog" id="search-dialog">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+        <input id="global-search" type="search" autocomplete="off" placeholder="Alles durchsuchen …" aria-label="Alles durchsuchen" />
+        <form method="dialog"><button type="submit" data-i18n="close">Schließen</button></form>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </dialog>
+
+    <dialog class="settings-dialog" id="settings-dialog">
+      <form method="dialog"><button class="dialog-close" aria-label="Schließen">×</button></form>
+      <div id="settings-content"></div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./js/content.js"></script>
+    <script src="./js/prayers.js"></script>
+    <script src="./js/saints.js"></script>
+    <script src="./js/calendar.js"></script>
+    <script src="./js/app-core.js"></script>
+    <script src="./js/views.js"></script>
+    <script src="./js/library.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
